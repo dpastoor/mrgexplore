@@ -15,7 +15,7 @@ make_server <- function(mod, shiny_param_list) {
     })
     output$default_plot <- renderPlot({
       print(nidata())
-      mod %>% ev(amt=100, ii=12,addl=3) %>% 
+      mod %>% 
         mrgsim(idata = nidata()) %>% 
         plot
     })

@@ -14,12 +14,13 @@ make_ui <- function(param_list) {
                         br(),
                         lapply(names(param_list), function(param) {
                           val <- param_list[[param]]
+                          step <- ifelse(val < 5, 0.25, 1)
                           sliderInput(param, 
                                       param, 
                                       value = val, 
-                                      min = round(val/10+1), #so min value 0
-                                      max = val*10, 
-                                      step = 1)
+                                      min = val/10+step, #so min value 0
+                                      max = val*5, 
+                                      step = step)
                         }),
                         br()
                )

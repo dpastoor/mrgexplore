@@ -2,7 +2,7 @@ source("ui.R")
 source("server.R")
 library(shiny)
 mod <- mread("one_cmpt_f")
-    
+mod <- mod %>% ev(amt=100, ii=6,addl=8)     
     ##' Extract annotations
 params <- mrgsolve:::details(mod) %>% 
   filter(block == "PARAM")
