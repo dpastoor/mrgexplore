@@ -20,8 +20,8 @@ GUT : Dosing compartment (mg)
 CENT : 10 : Central compartment (mg)
 
 [OMEGA] @annotated @cor
-ECL : 1     : IIV on CL
-EV  : 0.9 3 : IIV on V
+ECL : 0     : IIV on CL
+EV  : 0  0 : IIV on V
 
 [MAIN]
 double CLi = CL*exp(ECL);
