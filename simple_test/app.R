@@ -1,6 +1,8 @@
 source("ui.R") 
 source("server.R")
 library(shiny)
+library(dplyr)
+library(mrgsolve)
 mod <- mread("one_cmpt_f")
 mod <- mod %>% ev(amt=100, ii=6,addl=8)     
 ##' Extract annotations
