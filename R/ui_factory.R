@@ -1,5 +1,9 @@
+#' ui factory function
+#' @param param_list list of params to turn into sliders
+#' @param params_per_tab number of parameters per tab
 #' @import shiny
-make_ui <- function(param_list, params_per_tab = 6) {
+#' @export
+make_ui <- function(param_list, params_per_tab = 5) {
   # this is a bit hacky, but an easy way to split then separate
   # params into separate list elements
   param_list_split <- data.frame(
@@ -25,7 +29,6 @@ make_ui <- function(param_list, params_per_tab = 6) {
                 )
               })
   return(fluidPage(
-  # Application title
   titlePanel("mrgexplore"),
   fluidPage(
     fluidRow(
