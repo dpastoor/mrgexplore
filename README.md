@@ -6,6 +6,17 @@ the user the ability to create shiny apps with sliders to
 modify parameter values. This can provide insights to the 
 parameter surface and can even provide a sort of sensitivity analysis.
 
+It can be installed with
+
+```
+devtools::install_github("dpastoor/mrgexplore")
+```
+
+and assumes all dependencies required (such as rtools on windows) are set up and working for mrgsolve.
+
+
+## Simple Example:
+
 ```r
 one_cmt_f <- '
 [SET] delta = 0.1, end=48
