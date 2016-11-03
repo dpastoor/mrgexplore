@@ -3,8 +3,6 @@ make_server <- function(mod, shiny_param_list) {
   return(function(input, output, session) {
     library(mrgsolve)
     library(dplyr)
-    
-    
     idata <- shiny_param_list %>% bind_cols() 
     param_names <- names(shiny_param_list)
     nidata <- reactive({
