@@ -6,11 +6,11 @@
 #' prior filtering. Any passed in will expect to be modifying
 #' the values from the slider inputs
 #' @importFrom dplyr bind_cols mutate_    
-#' @importFrom mrgsolve mrgsim
+#' @importFrom mrgsolve mrgsim param
 #' @export
 make_server <- function(mod, shiny_param_list) {
   return(function(input, output, session) {
-    idata <- shiny_param_list %>% bind_cols() 
+    idata <- as.list(param(mod)) %>% bind_cols() 
     param_names <- names(shiny_param_list)
     nidata <- reactive({
       dots <- lapply(param_names, function(param) {
