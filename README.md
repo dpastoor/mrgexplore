@@ -18,6 +18,10 @@ and assumes all dependencies required (such as rtools on windows) are set up and
 ## Simple Example:
 
 ```r
+library(dplyr)
+library(mrgsolve)
+library(mrgexplore)
+
 one_cmt_f <- '
 [SET] delta = 0.1, end=48
 
