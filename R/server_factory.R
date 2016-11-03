@@ -20,6 +20,7 @@ make_server <- function(.model, shiny_param_list) {
     output$default_plot <- renderPlot({
       print(nidata())
       .model %>% 
+        mrgsolve::zero_re() %>%
         mrgsolve::mrgsim(idata = nidata()) %>% 
         plot
     })
