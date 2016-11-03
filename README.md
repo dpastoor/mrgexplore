@@ -74,6 +74,9 @@ mod_one_cmt_f %>%
    mrgexplore
 ```
 
+Which will give you
+
+![simple_ex1](assets/simple_ex1.png)
 
 For the moment it is quite simple, but will be expanded to
 handle more complex scenarios and exploration techniques in the future.
