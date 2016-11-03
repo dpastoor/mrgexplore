@@ -37,7 +37,9 @@ make_ui <- function(param_list, params_per_tab = 5) {
       fluidPage(
         fluidRow(
           column(3,
-                 do.call(tabsetPanel, tab_params)),
+                 wellPanel(
+                   do.call(tabsetPanel, tab_params))
+                 ),
           column(9,
                  plotOutput("default_plot")
                  )
