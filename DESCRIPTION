@@ -1,0 +1,23 @@
+Package: mrgexplore
+Type: Package
+Title: interactively explore mrgsolve models
+Version: 0.0.1
+Date: 2016-11-03
+Authors@R: c(
+    person("Devin", "Pastoor",
+    email = "devin.pastoor@gmail.com", role = c("aut", "cre")))
+Description: interactively explore mrgsolve models
+Depends:
+    R (>= 3.3.0)
+Imports:
+  dplyr,
+  magrittr,
+  mrgsolve,
+  shiny
+Suggests:
+  knitr
+Remotes:
+  metrumresearchgroup/mrgsolve/rdex
+License: MIT + file LICENSE
+VignetteBuilder: knitr
+RoxygenNote: 5.0.1
