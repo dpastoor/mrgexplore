@@ -1,3 +1,6 @@
+#' @importFrom magrittr "%>%"
+NULL
+
 #' launch shiny app to explore influence of parameter values
 #' @param mod mrgsolve model
 #' @export
