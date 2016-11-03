@@ -4,12 +4,12 @@
 \alias{make_server}
 \title{create a shiny server to be wired up to sliders}
 \usage{
-make_server(mod, shiny_param_list)
+make_server(.model, shiny_param_list)
 }
 \arguments{
-\item{mod}{model parameter}
-
 \item{shiny_param_list}{list of param and initial values}
+
+\item{mod}{model parameter}
 }
 \description{
 create a shiny server to be wired up to sliders

@@ -2,13 +2,14 @@
 NULL
 
 #' launch shiny app to explore influence of parameter values
-#' @param mod mrgsolve model
+#' @param .model mrgsolve model
+#' @importFrom mrgsolve param
 #' @export
-mrgexplore <- function(mod) {
+mrgexplore <- function(.model) {
   # only params should be editable in sliders (for now at least)
-  shiny_param_list <- as.list(mrgsolve::param(mod))
+  shiny_param_list <- as.numeric(param(.model))
   ui <- make_ui(shiny_param_list)
-  server <- make_server(mod, shiny_param_list)
+  server <- make_server(.model, shiny_param_list)
   shinyApp(ui = ui, server = server)
 }
 

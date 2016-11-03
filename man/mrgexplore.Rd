@@ -4,10 +4,10 @@
 \alias{mrgexplore}
 \title{launch shiny app to explore influence of parameter values}
 \usage{
-mrgexplore(mod)
+mrgexplore(.model)
 }
 \arguments{
-\item{mod}{mrgsolve model}
+\item{.model}{mrgsolve model}
 }
 \description{
 launch shiny app to explore influence of parameter values
