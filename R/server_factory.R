@@ -5,12 +5,10 @@
 #' shiny_param_list comes from as.list(param(mod)) and any
 #' prior filtering. Any passed in will expect to be modifying
 #' the values from the slider inputs
-#' @importFrom dplyr bind_cols mutate_    
-#' @importFrom mrgsolve mrgsim param
 #' @export
 make_server <- function(mod, shiny_param_list) {
   return(function(input, output, session) {
-    idata <- as.list(param(mod)) %>% bind_cols() 
+    idata <- as.list(mrgsolve::param(mod)) %>% dplyr::bind_cols() 
     param_names <- names(shiny_param_list)
     nidata <- reactive({
       dots <- lapply(param_names, function(param) {
@@ -21,11 +19,9 @@ make_server <- function(mod, shiny_param_list) {
     output$default_plot <- renderPlot({
       print(nidata())
       mod %>% 
-        mrgsim(idata = nidata()) %>% 
+        mrgsolve::mrgsim(idata = nidata()) %>% 
         plot
     })
-    
-    
   })
 }    
 
