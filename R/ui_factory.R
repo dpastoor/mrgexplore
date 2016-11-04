@@ -39,7 +39,7 @@ make_ui <- function(param_list, params_per_tab = 5) {
           column(3,
                  wellPanel(
                    do.call(tabsetPanel, tab_params))
-                 ),
+          ),
           column(9,
                  plotOutput("default_plot")
                  )
