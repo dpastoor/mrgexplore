@@ -9,13 +9,17 @@
 make_server <- function(.model, shiny_param_list) {
   return(function(input, output, session) {
     idata <- as.numeric(param(.model)) %>% 
-      as.list %>% dplyr::bind_cols() 
+      as.list %>% dplyr::bind_cols() %>% mutate(ID = 1)
     param_names <- names(shiny_param_list)
     nidata <- reactive({
       dots <- lapply(param_names, function(param) {
         as.numeric(input[[param]])
       })
-      idata %>% mutate_(.dots = setNames(dots, param_names))
+      dplyr::bind_rows(
+      idata,
+      idata %>% mutate_(.dots = setNames(dots, param_names)) %>%
+        mutate(ID = 2)
+      )
     })
     output$default_plot <- renderPlot({
       print(nidata())
