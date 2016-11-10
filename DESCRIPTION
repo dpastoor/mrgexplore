@@ -17,7 +17,7 @@ Imports:
 Suggests:
   knitr
 Remotes:
-  metrumresearchgroup/mrgsolve/rdex
+  metrumresearchgroup/mrgsolve/rdev
 License: MIT + file LICENSE
 VignetteBuilder: knitr
 RoxygenNote: 5.0.1
